@@ -45,7 +45,7 @@ function CountryData({ foods }) {
   });
 
   return (
-    <Card>
+    <>
       <table>
         <tr>{name}</tr>
         <tr>{id}</tr>
@@ -80,7 +80,7 @@ function CountryData({ foods }) {
         </tr>
         <tr>{attractionThreeDescription}</tr>
       </table>
-    </Card>
+    </>
   );
 }
 
