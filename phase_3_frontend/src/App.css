@@ -1,0 +1,17 @@
+.map {
+  border: solid 3px;
+  height: 45%;
+  width: 45%;
+  float: left;
+}
+
+.countryList {
+  height: 45%;
+  width: fit-content;
+  float: left;
+}
+
+.countryImage {
+  max-width: 300px;
+  max-height: 300px;
+}
