@@ -1,14 +1,14 @@
 import Country from "./Country";
 
-function CountryList({ foods }) {
-  const countryComponents = foods.map((food) => {
-    return <Country key={food.id} name={food.name} />;
+function CountryList({ countries }) {
+  const countryComponents = countries.map((country) => {
+    return <Country key={country.id} id={country.id} name={country.name} />;
   });
 
   return (
     <div>
-      <th>Countries:</th>
-      {countryComponents}
+      <h3>Countries:</h3>
+      <ul>{countryComponents}</ul>
     </div>
   );
 }

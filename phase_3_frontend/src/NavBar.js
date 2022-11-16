@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 function NavBar() {
   return (
     <nav className="navBar">
-      <h1 className="siteTitle">Site Title</h1>
+      <Link to="/">
+        <a href="/">Site Title</a>
+      </Link>
     </nav>
   );
 }

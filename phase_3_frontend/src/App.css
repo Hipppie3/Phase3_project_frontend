@@ -15,3 +15,26 @@
   max-width: 300px;
   max-height: 300px;
 }
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cardOne {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.list {
+  text-decoration: none;
+}

@@ -7,13 +7,13 @@ import CountryData from "./CountryData";
 
 function App() {
   const [content, setContent] = useState("");
-  const [foods, setFoods] = useState([]);
+  const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9292/food")
+    fetch("http://localhost:9292/country")
       .then((res) => res.json())
       .then((data) => {
-        setFoods(data);
+        setCountries(data);
       });
   }, []);
 
@@ -26,14 +26,18 @@ function App() {
           path="/"
           element={
             <HomePage
-              foods={foods}
-              setFoods={setFoods}
+              countries={countries}
+              setCountries={setCountries}
               content={content}
               setContent={setContent}
             />
           }
         />
-        <Route path="/Country/:id" element={<CountryData foods={foods} />} />
+        <Route
+          exact
+          path="/Country/:id"
+          element={<CountryData countries={countries} />}
+        />
       </Routes>
     </>
   );
