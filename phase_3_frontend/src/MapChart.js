@@ -22,45 +22,43 @@ const MapChart = ({ setTooltipContent, name, id }) => {
           scale: 400,
         }}
       >
-        <ZoomableGroup>
-          <Geographies geography={geoUrl}>
-            {({ geographies }) =>
-              geographies.map((geo) => (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onMouseEnter={() => {
-                    setTooltipContent(`${geo.properties.geounit}`);
-                  }}
-                  onMouseLeave={() => {
-                    setTooltipContent("");
-                  }}
-                  onClick={() => {
-                    <Link to={`/Country/${id}`} className="countryLink">
-                      <div>
-                        <tr className="country">{name}</tr>
-                      </div>
-                    </Link>;
-                  }}
-                  style={{
-                    default: {
-                      fill: "gray",
-                      outline: "none",
-                    },
-                    hover: {
-                      fill: "lightGray",
-                      outline: "none",
-                    },
-                    pressed: {
-                      fill: "#E42",
-                      outline: "none",
-                    },
-                  }}
-                />
-              ))
-            }
-          </Geographies>
-        </ZoomableGroup>
+        <Geographies geography={geoUrl}>
+          {({ geographies }) =>
+            geographies.map((geo) => (
+              <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                onMouseEnter={() => {
+                  setTooltipContent(`${geo.properties.geounit}`);
+                }}
+                onMouseLeave={() => {
+                  setTooltipContent("");
+                }}
+                onClick={() => {
+                  <Link to={`/Country/${id}`} className="countryLink">
+                    <div>
+                      <tr className="country">{name}</tr>
+                    </div>
+                  </Link>;
+                }}
+                style={{
+                  default: {
+                    fill: "gray",
+                    outline: "none",
+                  },
+                  hover: {
+                    fill: "lightGray",
+                    outline: "none",
+                  },
+                  pressed: {
+                    fill: "#E42",
+                    outline: "none",
+                  },
+                }}
+              />
+            ))
+          }
+        </Geographies>
       </ComposableMap>
     </div>
   );

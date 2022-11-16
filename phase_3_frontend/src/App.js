@@ -8,8 +8,6 @@ import CountryData from "./CountryData";
 function App() {
   const [content, setContent] = useState("");
   const [countries, setCountries] = useState([]);
-  const [allUsers, setAllUsers] = useState([]);
-  const [authenticatedUser, setAuthenticatedUser] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:9292/country")
