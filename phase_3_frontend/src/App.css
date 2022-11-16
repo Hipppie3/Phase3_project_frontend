@@ -1,11 +1,33 @@
+/* * {
+  background-color: black;
+  text-decoration: none;
+  color: darkgray;
+} */
+
+/* *:hover {
+  color: lightgray;
+} */
+
+* {
+  text-decoration: none;
+  color: white;
+}
+
 .map {
-  border: solid 3px;
-  height: 45%;
-  width: 45%;
-  float: left;
+  min-width: 42vw;
+}
+
+.background {
+  background-color: black;
+  background-image: url("http://wallpaperset.com/w/full/1/4/9/489887.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1020px;
 }
 
 .countryList {
+  /* background-color: #; */
+  color: white;
   height: 45%;
   width: fit-content;
   float: left;
@@ -17,9 +39,10 @@
 }
 
 .card {
+  color: white;
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 8px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -37,10 +60,30 @@
 
 .list {
   text-decoration: none!important;
+  font-family:'Times New Roman', Times, serif;
+  border: 2px solid;
+  height: 700px;
+  margin-left: 150px;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.listOne {
+  text-decoration: none;
+  font-size: 18px;
+  margin: 50px;
+  justify-content: center;
+  float: left;
+}
+
+.countriesLabel {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .navBar {
-  background-color: #333;
+  background-color: black;
   display: flex;
   justify-content: space-between;
   margin: 0;
@@ -49,7 +92,7 @@
 }
 
 .navBar ul {
-  background-color: #333;
+  background-color: black;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -57,9 +100,8 @@
   gap: 1rem;
 }
 
-.navBar a {
-  color: rgb(255, 224, 47);
-  -webkit-text-stroke: 1.5px rgb(36, 36, 211);
+.navBar a, .siteTitle {
+  color:white;
   align-items: center;
   gap: 2rem;
   padding: 0 1rem;
@@ -67,6 +109,6 @@
 }
 
 .logo {
-  height: 80px;
-  width: 120px;
+  height: 60px;
+  width: 60px;
 }

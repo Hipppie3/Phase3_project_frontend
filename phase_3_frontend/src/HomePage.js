@@ -1,5 +1,4 @@
-import MapChart from "./MapChart";
-import ReactTooltip from "react-tooltip";
+import MapLink from "./MapLink";
 import CountryList from "./CountryList";
 
 function HomePage({ countries, setCountries, content, setContent }) {
@@ -8,12 +7,7 @@ function HomePage({ countries, setCountries, content, setContent }) {
       <div className="countryList">
         <CountryList countries={countries} setCountries={setCountries} />
       </div>
-      <div className="card">
-        <div className="map">
-          <MapChart setTooltipContent={setContent} />
-          <ReactTooltip>{content}</ReactTooltip>
-        </div>
-      </div>
+      <MapLink content={content} setContent={setContent} />
     </>
   );
 }

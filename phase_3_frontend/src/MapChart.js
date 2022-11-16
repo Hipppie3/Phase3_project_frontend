@@ -10,10 +10,7 @@ import {
 const geoUrl =
   "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/asia.json";
 
-const MapChart = ({ setTooltipContent, countries }) => {
-  //   countries.map((country) => {
-  //     return <Link to={`/Country/${country.id}`}>{countries[country]}</Link>;
-  //   });
+const MapChart = ({ setTooltipContent, name, id }) => {
   return (
     <div data-tip="">
       <ComposableMap
@@ -37,6 +34,13 @@ const MapChart = ({ setTooltipContent, countries }) => {
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");
+                  }}
+                  onClick={() => {
+                    <Link to={`/Country/${id}`} className="countryLink">
+                      <div>
+                        <tr className="country">{name}</tr>
+                      </div>
+                    </Link>;
                   }}
                   style={{
                     default: {

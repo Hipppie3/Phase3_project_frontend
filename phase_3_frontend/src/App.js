@@ -8,6 +8,8 @@ import CountryData from "./CountryData";
 function App() {
   const [content, setContent] = useState("");
   const [countries, setCountries] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
+  const [authenticatedUser, setAuthenticatedUser] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:9292/country")
@@ -19,26 +21,28 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <HomePage
-              countries={countries}
-              setCountries={setCountries}
-              content={content}
-              setContent={setContent}
-            />
-          }
-        />
-        <Route
-          exact
-          path="/Country/:id"
-          element={<CountryData countries={countries} />}
-        />
-      </Routes>
+      <div className="background">
+        <NavBar />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <HomePage
+                countries={countries}
+                setCountries={setCountries}
+                content={content}
+                setContent={setContent}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/Country/:id"
+            element={<CountryData countries={countries} />}
+          />
+        </Routes>
+      </div>
     </>
   );
 }

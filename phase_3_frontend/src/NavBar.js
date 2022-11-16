@@ -14,12 +14,12 @@ function NavBar() {
       <ul>
         <li>
           <Link to="/">
-            <a href="/" className="pokeDexLink">
-              Placeholder
+            <a href="/" className="placeholder">
+              HOME
             </a>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/placeholder1">
             <a href="/placeholder1" className="placeholder">
               Placeholder1
@@ -46,7 +46,7 @@ function NavBar() {
               Placeholder 4
             </a>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

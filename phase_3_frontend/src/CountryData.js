@@ -64,7 +64,7 @@ function CountryData({ countries }) {
   return (
     <div>
       <h1 className="card">{name}</h1>
-      <h3 className="card, cardOne">
+      <h3 className="card">
         <u>National Dishes</u>
       </h3>
       <div className="card">
