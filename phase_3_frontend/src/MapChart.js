@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
   ZoomableGroup,
   ComposableMap,
@@ -8,7 +10,10 @@ import {
 const geoUrl =
   "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/asia.json";
 
-const MapChart = ({ setTooltipContent }) => {
+const MapChart = ({ setTooltipContent, countries }) => {
+  //   countries.map((country) => {
+  //     return <Link to={`/Country/${country.id}`}>{countries[country]}</Link>;
+  //   });
   return (
     <div data-tip="">
       <ComposableMap

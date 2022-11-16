@@ -36,5 +36,37 @@
 }
 
 .list {
+  text-decoration: none!important;
+}
+
+.navBar {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.navBar ul {
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navBar a {
+  color: rgb(255, 224, 47);
+  -webkit-text-stroke: 1.5px rgb(36, 36, 211);
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
   text-decoration: none;
+}
+
+.logo {
+  height: 80px;
+  width: 120px;
 }

@@ -6,9 +6,9 @@ function CountryList({ countries }) {
   });
 
   return (
-    <div>
+    <div className="list">
       <h3>Countries:</h3>
-      <ul>{countryComponents}</ul>
+      <ul className="list">{countryComponents}</ul>
     </div>
   );
 }
