@@ -43,26 +43,26 @@ function CountryData({ countries }) {
     attractionThree,
     attractionThreeImage,
     attractionThreeDescription,
-    flag,
+    // flag,
   } = countryDetails;
 
   countries.map((country) => {
     return <Link to={`/Country/${country.id}`}>{countries[country]}</Link>;
   });
 
-  const myStyle = {
-    backgroundImage: `url(${flag})`,
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed",
-    backgroundColor: "#000000",
-    height: "1000px",
-    margin: "0 auto",
-  };
+  //   const myStyle = {
+  //     backgroundImage: `url(${flag})`,
+  //     backgroundPosition: "center",
+  //     backgroundRepeat: "no-repeat",
+  //     backgroundSize: "cover",
+  //     backgroundAttachment: "fixed",
+  //     backgroundColor: "#000000",
+  //     height: "1000px",
+  //     margin: "0 auto",
+  //   };
 
   return (
-    <div style={myStyle}>
+    <div>
       <h1 className="card">{name}</h1>
       <h3 className="card, cardOne">
         <u>National Dishes</u>
