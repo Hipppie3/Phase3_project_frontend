@@ -1,16 +1,12 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import {
-  ZoomableGroup,
-  ComposableMap,
-  Geographies,
-  Geography,
-} from "react-simple-maps";
+import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 
 const geoUrl =
   "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/asia.json";
 
-const MapChart = ({ setTooltipContent, name, id }) => {
+const MapChart = ({ setTooltipContent, countries }) => {
+  const navigate = useNavigate();
   return (
     <div data-tip="">
       <ComposableMap
@@ -24,39 +20,40 @@ const MapChart = ({ setTooltipContent, name, id }) => {
       >
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
-            geographies.map((geo) => (
-              <Geography
-                key={geo.rsmKey}
-                geography={geo}
-                onMouseEnter={() => {
-                  setTooltipContent(`${geo.properties.geounit}`);
-                }}
-                onMouseLeave={() => {
-                  setTooltipContent("");
-                }}
-                onClick={() => {
-                  <Link to={`/Country/${id}`} className="countryLink">
-                    <div>
-                      <tr className="country">{name}</tr>
-                    </div>
-                  </Link>;
-                }}
-                style={{
-                  default: {
-                    fill: "gray",
-                    outline: "none",
-                  },
-                  hover: {
-                    fill: "lightGray",
-                    outline: "none",
-                  },
-                  pressed: {
-                    fill: "#E42",
-                    outline: "none",
-                  },
-                }}
-              />
-            ))
+            geographies.map((geo) => {
+              const dbCountry = countries?.find(
+                (country) =>
+                  country.name.toLowerCase() ===
+                  geo.properties.geounit.toLowerCase()
+              );
+              return (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  onMouseEnter={() => {
+                    setTooltipContent(`${geo.properties.geounit}`);
+                  }}
+                  onMouseLeave={() => {
+                    setTooltipContent("");
+                  }}
+                  onClick={() => navigate(`/Country/${dbCountry.id}`)}
+                  style={{
+                    default: {
+                      fill: "gray",
+                      outline: "none",
+                    },
+                    hover: {
+                      fill: "lightGray",
+                      outline: "none",
+                    },
+                    pressed: {
+                      fill: "lightGray",
+                      outline: "none",
+                    },
+                  }}
+                />
+              );
+            })
           }
         </Geographies>
       </ComposableMap>

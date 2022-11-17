@@ -7,7 +7,11 @@ function HomePage({ countries, setCountries, content, setContent }) {
       <div className="countryList">
         <CountryList countries={countries} setCountries={setCountries} />
       </div>
-      <MapLink content={content} setContent={setContent} />
+      <MapLink
+        countries={countries}
+        content={content}
+        setContent={setContent}
+      />
     </>
   );
 }
